@@ -424,3 +424,132 @@ body::before{
         margin-top: 10px;
     }
 }
+
+/* Compact layout keeps every authentication control visible. */
+.box{
+    width: 340px;
+    height: 440px;
+    min-height: 0;
+}
+
+.box::before,
+.box::after,
+.border-line::before,
+.border-line::after{
+    width: 340px;
+    height: 440px;
+}
+
+.box form{
+    padding: 18px 24px;
+}
+
+.box form#loginForm{
+    min-height: 0;
+}
+
+.box form h2{
+    font-size: 28px;
+}
+
+.brand-mark{
+    font-size: 22px;
+}
+
+.tagline{
+    font-size: 8px;
+}
+
+.game-stats{
+    gap: 5px;
+    margin-top: 10px;
+    font-size: 8px;
+}
+
+.game-stats span{
+    padding: 3px 6px;
+}
+
+.auth-message{
+    min-height: 14px;
+    margin-top: 5px;
+    font-size: 10px;
+}
+
+.input-box{
+    width: 292px;
+    margin-top: 12px;
+}
+
+.input-box input,
+.input-box span{
+    font-size: 14px;
+}
+
+.input-box input{
+    padding: 15px 8px 7px;
+}
+
+.input-box span{
+    padding: 15px 0 7px;
+}
+
+.input-box input:valid ~ span,
+.input-box input:focus ~ span,
+.input-box input:not(:placeholder-shown) ~ span{
+    font-size: 10px;
+    transform: translateY(-26px);
+}
+
+.imp-links a{
+    font-size: 11px;
+    margin: 7px 0;
+}
+
+.imp-links span{
+    font-size: 11px;
+}
+
+.btn{
+    flex-basis: 36px;
+    width: 112px;
+    min-height: 36px;
+    padding: 7px 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.google-divider{
+    margin: 7px 0 0;
+    font-size: 11px;
+}
+
+.g_id_signin{
+    min-height: 36px;
+    margin-top: 3px;
+}
+
+@media (max-width: 480px){
+    .box{
+        width: min(340px, calc(100vw - 24px));
+        height: min(440px, calc(100vh - 24px));
+    }
+
+    .box::before,
+    .box::after,
+    .border-line::before,
+    .border-line::after{
+        width: 340px;
+        height: 440px;
+    }
+
+    .box form{
+        padding: 16px 20px;
+    }
+
+    .input-box{
+        width: 100%;
+    }
+}
