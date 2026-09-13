@@ -143,6 +143,9 @@ body::before{
     margin: 14px 0 4px;
     font-size: 12px;
 }
+.box form#loginForm{
+    min-height: 540px;
+}
 .google-divider::before,
 .google-divider::after{
     content: '';
@@ -152,7 +155,13 @@ body::before{
 }
 .g_id_signin{
     align-self: center;
-    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    min-height: 40px;
+    margin: 8px auto 0;
+    overflow: visible;
 }
 .imp-links span{
     color: #b8cadc;
@@ -348,6 +357,26 @@ body::before{
         min-height: 0;
         padding-top: 24px;
         padding-bottom: 24px;
+    }
+    .box form#loginForm{
+        min-height: 0;
+    }
+    #loginForm .input-box{
+        margin-top: 14px;
+    }
+    #loginForm .game-stats{
+        margin-top: 12px;
+    }
+    #loginForm .imp-links a{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #loginForm .google-divider{
+        margin-top: 8px;
+        margin-bottom: 0;
+    }
+    #loginForm .g_id_signin{
+        margin-top: 4px;
     }
     .btn{
         flex-basis: 44px;
