@@ -5,6 +5,16 @@ const path = require('node:path');
 const { DatabaseSync } = require('node:sqlite');
 
 const port = Number(process.env.PORT || 3000);
+const contentTypes = {
+    '.css': 'text/css; charset=utf-8',
+    '.html': 'text/html; charset=utf-8',
+    '.js': 'text/javascript; charset=utf-8',
+    '.json': 'application/json; charset=utf-8',
+    '.ico': 'image/x-icon',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.jpeg': 'image/jpeg'
+};
 const database = new DatabaseSync(path.join(__dirname, 'katta.sqlite'));
 
 database.exec(`
@@ -134,7 +144,9 @@ const server = http.createServer(async (request, response) => {
     if (!filePath.startsWith(__dirname) || !fs.existsSync(filePath)) {
         return sendJson(response, 404, { error: 'Not found.' });
     }
-    response.writeHead(200);
+    response.writeHead(200, {
+        'Content-Type': contentTypes[path.extname(filePath).toLowerCase()] || 'application/octet-stream'
+    });
     return fs.createReadStream(filePath).pipe(response);
 });
 
