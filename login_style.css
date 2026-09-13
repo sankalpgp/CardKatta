@@ -281,15 +281,15 @@ body::before{
 }
 .btn{
     position: relative;
-    isolation: isolate;
-    z-index: 0;
     align-self: center;
     display: block;
     width: 132px;
-    border: 2px solid transparent;
+    min-height: 44px;
+    border: 2px solid #00eeff;
     outline: none;
     padding: 11px 18px;
-    background: #222;
+    background: linear-gradient(90deg, #00eeff, #8d4dff, #ff00bb, #00eeff);
+    background-size: 300% 100%;
     color: #fff;
     border-radius: 45px;
     font-size: 16px;
@@ -297,31 +297,10 @@ body::before{
     letter-spacing: 1px;
     margin-top: 10px;
     cursor: pointer;
-    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    animation: button-gradient-flow 2.5s linear infinite;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.btn::before{
-    content: '';
-    position: absolute;
-    inset: 2px;
-    z-index: -1;
-    border-radius: inherit;
-    background: linear-gradient(90deg, #222, #292929);
-}
-.btn::after{
-    content: '';
-    position: absolute;
-    inset: -50%;
-    z-index: -2;
-    background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        transparent 250deg,
-        #00eeff 285deg,
-        #ff00bb 320deg,
-        transparent 355deg
-    );
-    animation: button-border-spin 2.5s linear infinite;
 }
 .btn:hover{
     color: #fff;
@@ -333,9 +312,9 @@ body::before{
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.35),
         0 0 16px rgba(0, 238, 255, 0.5);
 }
-@keyframes button-border-spin{
+@keyframes button-gradient-flow{
     to{
-        transform: rotate(360deg);
+        background-position: 300% 0;
     }
 }
 .btn:active{
