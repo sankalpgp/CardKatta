@@ -153,6 +153,10 @@ body::before{
     align-self: center;
     margin-top: 8px;
 }
+.imp-links span{
+    color: #b8cadc;
+    font-size: 13px;
+}
 .box form h2{
     color: #fff;
     font-size: 34px;
@@ -278,6 +282,7 @@ body::before{
 .btn{
     position: relative;
     isolation: isolate;
+    z-index: 0;
     align-self: center;
     display: block;
     width: 132px;
@@ -343,6 +348,10 @@ body::before{
     }
     .box{
         width: min(380px, 100%);
+        min-height: 0;
+        height: auto;
+        max-height: calc(100vh - 24px);
+        overflow-y: auto;
     }
     .input-box{
         width: 100%;
@@ -350,9 +359,50 @@ body::before{
     .box form{
         padding-left: 22px;
         padding-right: 22px;
+        position: relative;
+        inset: auto;
+        min-height: 0;
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
     .imp-links{
         gap: 10px;
         flex-wrap: wrap;
+    }
+    .box::before,
+    .box::after,
+    .border-line::before,
+    .border-line::after{
+        width: 200%;
+        height: 200%;
+    }
+    .box form h2{
+        font-size: 30px;
+    }
+    .input-box{
+        margin-top: 18px;
+    }
+    .input-box input{
+        padding-top: 16px;
+        padding-bottom: 8px;
+    }
+    .input-box span{
+        padding-top: 16px;
+        padding-bottom: 8px;
+    }
+    .input-box input:valid ~ span,
+    .input-box input:focus ~ span,
+    .input-box input:not(:placeholder-shown) ~ span{
+        transform: translateY(-28px);
+    }
+    .btn{
+        margin-top: 16px;
+    }
+    .imp-links{
+        justify-content: center;
+        text-align: center;
+    }
+    .google-divider{
+        margin-top: 10px;
     }
 }
