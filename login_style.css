@@ -7,6 +7,12 @@
     box-sizing: border-box;
     font-family: "Poppins", serif;
 }
+html,
+body{
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
 body{
     position: relative;
     min-height: 100vh;
@@ -118,6 +124,7 @@ body::before{
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    max-width: 100%;
 }
 .hidden-panel{
     display: none !important;
@@ -551,5 +558,20 @@ body::before{
 
     .input-box{
         width: 100%;
+    }
+
+    .imp-links{
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .imp-links a,
+    .imp-links span{
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .g_id_signin{
+        max-width: 100%;
     }
 }
