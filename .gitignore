@@ -1,0 +1,4 @@
+node_modules/
+katta.sqlite
+katta.sqlite-shm
+katta.sqlite-wal

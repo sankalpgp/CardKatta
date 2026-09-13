@@ -1,0 +1,13 @@
+{
+  "name": "katta-card-scorekeeper",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Katta card scorekeeper with local authentication",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
